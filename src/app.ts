@@ -9,8 +9,12 @@ app.use(express.json())
 
 import router from './routes/routes';
 import Logger from '../config/logger'
+import  Morgan from './middleware/morgan'
+
+app.use(Morgan);
 
 app.use("/api/", router);
+
 
 const port = config.get<number>("port");
 
