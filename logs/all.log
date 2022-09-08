@@ -1,0 +1,7 @@
+2022-09-07 22:31:28:3128 - [32minfo[39m: [32mThe application is running on port 3000[39m
+2022-09-07 22:32:03:323 - [32minfo[39m: [32mThe application is running on port 3000[39m
+2022-09-07 22:32:19:3219 - [32minfo[39m: [32mThe application is running on port 3000[39m
+2022-09-07 22:32:30:3230 - [31merror[39m: [31mcould not connect[39m
+2022-09-07 22:32:30:3230 - [31merror[39m: [31mError MongoServerError: bad auth : Authentication failed.[39m
+2022-09-07 22:32:30:3230 - [32minfo[39m: [32mThe application is running on port 3000[39m
+2022-09-07 22:32:58:3258 - [31merror[39m: [31mcould not connect[39m

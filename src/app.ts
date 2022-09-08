@@ -8,11 +8,13 @@ const app = express()
 app.use(express.json())
 
 import router from './routes/routes';
+import Logger from '../config/logger'
+
 app.use("/api/", router);
 
 const port = config.get<number>("port");
 
 app.listen(3000, async ()=>{
   await db();
-  console.log(`The application is running on port ${port}`);
+  Logger.info(`The application is running on port ${port}`);
 })
