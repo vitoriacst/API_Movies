@@ -42,8 +42,29 @@ export async function removeMovie(req: Request , res: Response) {
       if(!movie){
          return res.status(404).json({error: "movie not found" })
       }
+      await movie.delete()
+
+      return res.status(200).json({msg: "film successfully removed"})
    } catch (error: any) {
       logger.error(`Erro no sistema: ${error.message}`)
       return res.status(500).json({error: "try again" })
    }
+}
+
+export async function updateMovie(req: Request , res: Response) {
+ try {
+   const id = req.params.id
+   const data = req.body;
+   const movie = await movieModel.findById(id)
+   if(!movie){
+      return res.status(404).json({error: "movie not found" })
+   }
+   await movieModel.updateOne({_id:id}, data)
+   
+   return res.status(200).json(data)
+
+} catch (error: any) {
+   logger.error(`Erro no sistema: ${error.message}`)
+   return res.status(500).json({error: "try again" })
+}
 }
